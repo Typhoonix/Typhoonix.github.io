@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,9 +16,11 @@
 
   <!-- 页面元数据 -->
   
-  <title>Archive: 2020/8 - Typhoonix&#39;s Blog</title>
+  <title>我的朋友们 - Typhoonix&#39;s Blog</title>
   
 
+  
+    <meta name="description" content="这里写友链上方的内容。">
   
 
   <!-- feed -->
@@ -95,7 +95,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover links' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -758,7 +758,7 @@
   
 
 
-  <div class="l_body">
+  <div class="l_body nocover">
     <div class='body-wrapper' id="pjax-container">
       
         <!--此文件用来存放一些不方便取值的变量--> 
@@ -777,16 +777,16 @@
  
 <script> 
   // 处理封面 此时 jquery 还没加载 
-  if ("blog" == "none") { // 移除封面 
+  if ("none" == "none") { // 移除封面 
     document.getElementsByClassName('cover')[0].style.display = "none"; 
     document.getElementsByClassName('l_body')[0].classList.add("nocover"); 
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
   } else { 
-    if ("blog" == "blog") { // 半屏 
+    if ("none" == "blog") { // 半屏 
       document.getElementsByClassName('cover')[0].classList.remove("full"); 
       document.getElementsByClassName('cover')[0].classList.add("half"); 
       document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
-    } else if ("blog" == "docs") { // 全屏 
+    } else if ("none" == "docs") { // 全屏 
       document.getElementsByClassName('cover')[0].classList.remove("half"); 
       document.getElementsByClassName('cover')[0].classList.add("full"); 
       document.getElementsByClassName('scroll-down')[0].style.display = ""; 
@@ -801,22 +801,8 @@
       
 
 <div class='l_main'>
-	
-		
-  <section class="post-list ">
+  <article id="links" class="post white-box reveal shadow article-type-links" itemscope itemprop="blogPost">
     
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
 
 
   <section class='meta'>
@@ -826,11 +812,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/08/09/testpage/">
-      Visual Studio坑（其一）
+  <h1 class="title">
+    <a href="/friends/index.html">
+      我的朋友们
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -840,60 +826,16 @@
           
             
               
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/C%E8%AF%AD%E8%A8%80/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Diary/C语言</p>
-    </a>
-  </div>
-
 
             
           
             
-              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-10T16:22:33+08:00">
+              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-10T16:35:57+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Aug 10, 2020</p>
   </a>
 </div>
-
-            
-          
-            
-              
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/09/testpage/" class="leancloud_visitors" data-flag-title="Visual Studio坑（其一）">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/09/testpage/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/09/testpage/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
 
             
           
@@ -911,165 +853,218 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
+      <section class="article article-entry l_friends">
+        <p>这里写友链上方的内容。</p>
+        
+          
+            
+              <div class='friends-group'>
+                
+                  <br>
+                  <h2 class='friend-header'>
+                    
+                      <i class="fas fa-user-tie fa-fw" aria-hidden="true"></i>
+                    
+                    分组1
+                  </h2>
+                  
+                    <p>这个分组的描述</p>
+
+                  
+                
+                <div class='friend-content'>
+                  
+                    <a class='friend-card' style='background:#3E74C9; color:#fff'
+                      target="_blank" rel="external nofollow noopener noreferrer" href='/'>
+                      <div class='friend-left'>
+                        
+                      </div>
+                      <div class='friend-right'>
+                        <p class="friend-name"></p>
+                        
+                          <div class='friend-tags-wrapper'>
+                          
+                            <p class="tags"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>标签1</p>
+                          
+                            <p class="tags"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>标签2</p>
+                          
+                          </div>
+                        
+                        
+                          <div class='friend-tags-wrapper'>
+                            <p class="tags">描述文字</p>
+                          </div>
+                        
+                      </div>
+                    </a>
+                  
+                </div>
+              </div>
+            
+          
+            
+              <div class='friends-group'>
+                
+                  <br>
+                  <h2 class='friend-header'>
+                    
+                      <i class="fas fa-user-tie fa-fw" aria-hidden="true"></i>
+                    
+                    分组2
+                  </h2>
+                  
+                    <p>这个分组的描述</p>
+
+                  
+                
+                <div class='friend-content'>
+                  
+                    <a class='friend-card' style='background:#3E74C9; color:#fff'
+                      target="_blank" rel="external nofollow noopener noreferrer" href='/'>
+                      <div class='friend-left'>
+                        
+                      </div>
+                      <div class='friend-right'>
+                        <p class="friend-name"></p>
+                        
+                          <div class='friend-tags-wrapper'>
+                          
+                            <p class="tags"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>标签1</p>
+                          
+                            <p class="tags"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i>标签2</p>
+                          
+                          </div>
+                        
+                        
+                          <div class='friend-tags-wrapper'>
+                            <p class="tags">描述文字</p>
+                          </div>
+                        
+                      </div>
+                    </a>
+                  
+                </div>
+              </div>
+            
+          
+        
+        <br><br>
+        <p>这里可以写友链页面下方的文字备注，例如自己的友链规范、示例等。</p>
+      </section>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
       
-        <p>鄙人在学习visual studio编写C语言程序的时候遇到的一个坑，编写出来的exe文件在未安装visual studio的环境下会出现缺失vcruntime140d.dll和ucrtbase.dll的情况。</p>
+        
+          
+<div class='new-meta-item author'>
+  <a class='author' target="_blank" href="https://typhoonix.top" rel="nofollow noopener">
+    <img no-lazy src="">
+    <p>Typhoonix</p>
+  </a>
+</div>
+
+        
       
-    </div>
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        <a class= "readmore" href="/2020/08/09/testpage/">
-          read more <i class="fas fa-chevron-right"></i>
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/friends/index.html&title=我的朋友们 - Typhoonix's Blog&summary=这里写友链上方的内容。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
         </a>
       
     
-  </section>
-</article>
-
-          </div>
-        
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/friends/index.html&title=我的朋友们 - Typhoonix's Blog&summary=这里写友链上方的内容。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
       
     
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/friends/index.html&title=我的朋友们 - Typhoonix's Blog&summary=这里写友链上方的内容。"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
   </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+
+
+  </article>
 
   
 
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
 
-	
+      </section>
+    </section>
+  </article>
+
+
+
 </div>
 <aside class='l_side'>
   
   
-    
-    
-
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/Logo-NavBar@3x.png'/>
-        </a>
-      
-    
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="/382693873@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/Typhoonix/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=80855832"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
 
   
     
     
-  
-
-  <section class="widget category shadow desktop">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
 
 
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/C%E8%AF%AD%E8%A8%80/" href="/categories/C%E8%AF%AD%E8%A8%80/"
-            id="categoriesCE8AFADE8A880"
-            ><div class='name'>C语言</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Diary/" href="/categories/Diary/"
-            id="categoriesDiary"
-            ><div class='name'>Diary</div><div class='badge'>(2)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Blog/" style="font-size: 14px; color: #999">Blog</a> <a href="/tags/C/" style="font-size: 14px; color: #999">C</a> <a href="/tags/Hexo/" style="font-size: 14px; color: #999">Hexo</a> <a href="/tags/Visual-Studio/" style="font-size: 14px; color: #999">Visual Studio</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 </aside>
-
-
-
-
-
-	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-	
-
-	
 
 
     </div>
