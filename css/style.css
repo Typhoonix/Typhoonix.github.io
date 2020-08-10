@@ -49,15 +49,15 @@ html >::-webkit-scrollbar-track-piece {
   background: transparent;
 }
 html >::-webkit-scrollbar-thumb {
-  background: #2196f3;
+  background: #fc8080;
   cursor: pointer;
   border-radius: 2px;
 }
 html >::-webkit-scrollbar-thumb:hover {
-  background: #06f;
+  background: #fc3c3c;
 }
 body {
-  background-color: #fff;
+  background-color: #f6f6f6;
   text-rendering: optimizelegibility;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   line-height: 1.65;
@@ -4764,6 +4764,11 @@ footer .copyright p {
 .l_main .post-wrapper {
   column-break-inside: avoid;
   break-inside: avoid-column;
+  border-radius: 8px;
+  transition: box-shadow 0.5s ease;
+}
+.l_main .post-wrapper:hover {
+  box-shadow: 0 1px 20px -6px rgba(0,0,0,0.5);
 }
 .l_main .post-wrapper {
   margin-bottom: 16px;
@@ -6321,6 +6326,10 @@ ul.list-v.rightmenu li.music a.nav.volume .aplayer-volume-bar .aplayer-volume {
   border-radius: 8px;
   width: 100%;
   display: none;
+  transition: box-shadow 0.5s ease;
+}
+.widget:hover {
+  box-shadow: 0 1px 20px -6px rgba(0,0,0,0.5);
 }
 .widget ul li,
 .widget ol li {
