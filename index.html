@@ -779,16 +779,16 @@
  
 <script> 
   // 处理封面 此时 jquery 还没加载 
-  if ("blog" == "none") { // 移除封面 
+  if ("docs" == "none") { // 移除封面 
     document.getElementsByClassName('cover')[0].style.display = "none"; 
     document.getElementsByClassName('l_body')[0].classList.add("nocover"); 
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
   } else { 
-    if ("blog" == "blog") { // 半屏 
+    if ("docs" == "blog") { // 半屏 
       document.getElementsByClassName('cover')[0].classList.remove("full"); 
       document.getElementsByClassName('cover')[0].classList.add("half"); 
       document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
-    } else if ("blog" == "docs") { // 全屏 
+    } else if ("docs" == "docs") { // 全屏 
       document.getElementsByClassName('cover')[0].classList.remove("half"); 
       document.getElementsByClassName('cover')[0].classList.add("full"); 
       document.getElementsByClassName('scroll-down')[0].style.display = ""; 
@@ -846,9 +846,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/C%E8%AF%AD%E8%A8%80/' rel="nofollow">
+    <a href='/categories/Diary/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Diary/C语言</p>
+      <p>C语言/Diary</p>
     </a>
   </div>
 
