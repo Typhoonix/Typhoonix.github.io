@@ -5,6 +5,8 @@
   <!-- SEO相关 -->
   
     
+      <meta name="robots" content="noindex,follow">
+    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -16,13 +18,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>Hello World! - Typhoonix&#39;s Blog</title>
-  
-    <meta name="keywords" content="Blog">
+  <title>Archive: 2020/8 - Typhoonix&#39;s Blog</title>
   
 
-  
-    <meta name="description" content=" A New Start ">
   
 
   <!-- feed -->
@@ -97,7 +95,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover post' style="display: none;">
+    <cover class='cover ' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -412,7 +410,7 @@
   
 
 
-  <div class="l_body nocover">
+  <div class="l_body">
     <div class='body-wrapper' id="pjax-container">
       
         <!--此文件用来存放一些不方便取值的变量--> 
@@ -421,8 +419,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">true</div> 
-  <div id="pjax-pageTitle">Hello World!</div> 
+  <div id="pjax-ispage">false</div> 
+  <div id="pjax-pageTitle"></div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -431,16 +429,16 @@
  
 <script> 
   // 处理封面 此时 jquery 还没加载 
-  if ("none" == "none") { // 移除封面 
+  if ("blog" == "none") { // 移除封面 
     document.getElementsByClassName('cover')[0].style.display = "none"; 
     document.getElementsByClassName('l_body')[0].classList.add("nocover"); 
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
   } else { 
-    if ("none" == "blog") { // 半屏 
+    if ("blog" == "blog") { // 半屏 
       document.getElementsByClassName('cover')[0].classList.remove("full"); 
       document.getElementsByClassName('cover')[0].classList.add("half"); 
       document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
-    } else if ("none" == "docs") { // 全屏 
+    } else if ("blog" == "docs") { // 全屏 
       document.getElementsByClassName('cover')[0].classList.remove("half"); 
       document.getElementsByClassName('cover')[0].classList.add("full"); 
       document.getElementsByClassName('scroll-down')[0].style.display = ""; 
@@ -455,11 +453,22 @@
       
 
 <div class='l_main'>
-  
-
-  
-    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+	
+		
+  <section class="post-list ">
+    
       
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
 
 
   <section class='meta'>
@@ -469,11 +478,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h1 class="title">
-    <a href="/2013/07/13/hello-world/">
+  <h2 class="title">
+    <a href="/2020/08/09/hello-world/">
       Hello World!
     </a>
-  </h1>
+  </h2>
 
 
         
@@ -495,12 +504,48 @@
             
           
             
-              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-11T02:16:09+08:00">
+              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-11T02:25:59+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Aug 11, 2020</p>
   </a>
 </div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/08/09/hello-world/" class="leancloud_visitors" data-flag-title="Hello World!">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/08/09/hello-world/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/08/09/hello-world/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
 
             
           
@@ -518,200 +563,160 @@
   </section>
 
 
-      <section class="article typo">
-        <div class="article-entry" itemprop="articleBody">
-          
-          
-          <h1 style="font-size:50px;font-family:UD Digi Kyokasho NP-B"><center> A New Start </center></h1>
-
-<a id="more"></a>
-
-<p><img src="https://cdn.jsdelivr.net/gh/Typhoonix/CDN-for-blog@1.12/images/wallpaper1.png" alt="夕陽を背に
-Pixiv ID:70336750
-Member:みふる"></p>
-<p>和其他大佬不一样，我是第一次搭建个人博客</p>
-<p>多亏大佬们的博文，基于Github Page和hexo搭建的博客上手起来不难，不过还有很多细节需要慢慢添加调整，估计建起一个美观与实用兼顾的博客需要耗费不少精力 - -|||</p>
-<p>回到博客这边，为什么要写博客，有以下好处：</p>
-<ol>
-<li>觉得懂未必懂，写作是一个很好的反思过程</li>
-<li>好记性不如烂笔头，容易遗忘的知识点通过浏览写过的博客能快速重新掌握</li>
-<li>结交志同道合的朋友，大佬之间经常通过博客作为交流渠道，不过目前这不是重点</li>
-</ol>
-<p>博客的内容大部分会记录我学过的一些知识、错题和遇到的种种BUG，如果学到了大体系的知识也会考虑记录进博客做整理</p>
-<p>博客配置，主题采用volantis，使用github进行版本控制，后边可能会考虑用上coding</p>
-<p>这是一次全新的开始，祝：</p>
-<p>一路开心！</p>
-
-          
-            <div class='article_footer'>
-              
-                
-  
-    
-    
-
-
-
-  
-
-  
-    
-    
-
-
-
-  
-
-
-              
-            </div>
-          
-        </div>
-        
-          
-
-
-  <section class='meta' id="footer-meta">
-    <div class='new-meta-box'>
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
       
-        
-          
-<div class='new-meta-item author'>
-  <a class='author' target="_blank" href="https://typhoonix.top" rel="nofollow noopener">
-    <img no-lazy src="">
-    <p>Typhoonix</p>
-  </a>
-</div>
-
-        
-      
-        
-          
-  
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Blog/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Blog</p></a></div>
-
-
-        
-      
-        
-          
-
-        
-      
-        
-          
-  <div class="new-meta-item share -mob-share-list">
-  <div class="-mob-share-list share-body">
-    
-      
-        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2013/07/13/hello-world/&title=Hello World! - Typhoonix's Blog&summary= A New Start "
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2013/07/13/hello-world/&title=Hello World! - Typhoonix's Blog&summary= A New Start "
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
-          
-        </a>
-      
-    
-      
-        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
-          
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2013/07/13/hello-world/&title=Hello World! - Typhoonix's Blog&summary= A New Start "
-          
-          >
-          
-            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
-          
-        </a>
-      
-    
-  </div>
-</div>
-
-
-
-        
+        <h1 style="font-size:50px;font-family:UD Digi Kyokasho NP-B"><center> A New Start </center></h1>
       
     </div>
+    
+      
+        <a class= "readmore" href="/2020/08/09/hello-world/">
+          阅读全文 <i class="fas fa-chevron-right"></i>
+        </a>
+      
+    
   </section>
+</article>
 
-
+          </div>
         
-        
-      </section>
-    </article>
-  
-
+      
+    
+  </section>
   
     
-
-  <article class="post white-box reveal comments shadow">
-    <section class="article typo">
-      <p ct><i class='fas fa-comments'></i> 评论</p>
-      
-      <section id="comments">
-        <div id="valine_container" class="valine_thread">
-  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
-</div>
-
-      </section>
-    </section>
-  </article>
-
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
 
   
 
 
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
+	
 </div>
 <aside class='l_side'>
   
   
+    
+    
+
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/Typhoonix/CDN-for-blog@1.11/images/blogger2.jpg'/>
+        </a>
+      
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="https://twitter.com/DevilBakerLlEz"
+              class="social fab fa-twitter flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="/382693873@qq.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/Typhoonix/"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=80855832"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
 
   
     
     
+  
 
-
-
-  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+  <section class="widget category shadow desktop">
     
   <header>
     
-      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
     
   </header>
 
 
     <div class='content'>
+      <ul class="entry navigation">
         
+          <li><a class="flat-box"
+            title="/categories/Diary/" href="/categories/Diary/"
+            id="categoriesDiary"
+            ><div class='name'>Diary</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
     </div>
   </section>
 
+
+  
+
+  
+    
+    
+  
+
+  <section class="widget tagcloud shadow desktop mobile">
+    
+  <header>
+    
+      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      <a href="/tags/Blog/" style="font-size: 14px; color: #999">Blog</a>
+    </div>
+  </section>
+
+
+  
 
   
 
 
 </aside>
 
+
+
+
+
+	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+	
+
+	
 
 
     </div>
