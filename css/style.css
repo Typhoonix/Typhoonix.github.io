@@ -4765,10 +4765,6 @@ footer .copyright p {
   column-break-inside: avoid;
   break-inside: avoid-column;
   border-radius: 8px;
-  transition: box-shadow 0.5s ease;
-}
-.l_main .post-wrapper:hover {
-  box-shadow: 0 1px 20px -6px rgba(0,0,0,0.5);
 }
 .l_main .post-wrapper {
   margin-bottom: 16px;
@@ -4837,14 +4833,19 @@ footer .copyright p {
 }
 .l_main .post {
   position: relative;
+  opacity: 0.9;
   margin: 16px auto;
   padding: 24px;
   border-radius: 8px;
+  transition: box-shadow 0.5s ease;
 }
 @media screen and (max-width: 425px) {
   .l_main .post {
     border-radius: 0;
   }
+}
+.l_main .post:hover {
+  box-shadow: 0 1px 20px -6px rgba(0,0,0,0.5);
 }
 .l_main .post h1 {
   font-weight: normal;
@@ -6321,6 +6322,7 @@ ul.list-v.rightmenu li.music a.nav.volume .aplayer-volume-bar .aplayer-volume {
 }
 .widget {
   z-index: 0;
+  opacity: 0.9;
   background: #fff;
   margin-top: 16px;
   border-radius: 8px;
