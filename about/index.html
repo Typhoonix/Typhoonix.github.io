@@ -16,7 +16,7 @@
 
   <!-- 页面元数据 -->
   
-  <title>关于 - Typhoonix&#39;s Blog</title>
+  <title>关于我 - Typhoonix&#39;s Blog</title>
   
 
   
@@ -138,11 +138,11 @@
               <i class='fas fa-tags fa-fw'></i><p>标签</p>
             </a>
           
-            <a href="/about/"
+            <a href="/friends/"
               
               
-              id="about">
-              <i class='fas fa-info-circle fa-fw'></i><p>关于</p>
+              id="friends">
+              <i class='fas fa-link fa-fw'></i><p>友链</p>
             </a>
           
         
@@ -153,13 +153,15 @@
 
       <div class="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
     </cover>
-    <header class="l_header no_sidebar shadow blur">
+    <header class="l_header shadow blur">
   <div class='container'>
   <div class='wrapper'>
     <div class='nav-sub'>
       <p class="title"></p>
       <ul class='switcher nav-list-h m-phone' id="pjax-header-nav-list">
         <li><a class="s-comment fas fa-comments fa-fw" target="_self" href='javascript:void(0)'></a></li>
+        
+          <li><a class="s-toc fas fa-list fa-fw" target="_self" href='javascript:void(0)'></a></li>
         
       </ul>
     </div>
@@ -265,14 +267,54 @@
             
             
               <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
                 <a class="menuitem flat-box faa-parent animated-hover" href=/about/
                   
                   
                   
                     id="about"
                   >
-                  <i class='fas fa-info-circle fa-fw'></i>关于
+                  <i class='fas fa-info-circle fa-fw'></i>我的信息
                 </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
                 
               </li>
             
@@ -381,14 +423,54 @@
               
             
               <li>
+                <a class="menuitem flat-box faa-parent animated-hover" 
+                  
+                  
+                  >
+                  <i class='fas fa-info-circle fa-fw'></i>关于
+                </a>
+                
+                  <ul class="list-v">
+                    
+                      
+            
+              <li>
                 <a class="menuitem flat-box faa-parent animated-hover" href=/about/
                   
                   
                   
                     id="about"
                   >
-                  <i class='fas fa-info-circle fa-fw'></i>关于
+                  <i class='fas fa-info-circle fa-fw'></i>我的信息
                 </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <hr>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover" href=/friends/
+                  
+                  
+                  
+                    id="friends"
+                  >
+                  <i class='fas fa-link fa-fw'></i>友链
+                </a>
+                
+              </li>
+            
+          
+                    
+                  </ul>
                 
               </li>
             
@@ -406,7 +488,7 @@
   
 
 
-  <div class="l_body nocover">
+  <div class="l_body">
     <div class='body-wrapper' id="pjax-container">
       
         <!--此文件用来存放一些不方便取值的变量--> 
@@ -425,16 +507,16 @@
  
 <script> 
   // 处理封面 此时 jquery 还没加载 
-  if ("none" == "none") { // 移除封面 
+  if ("blog" == "none") { // 移除封面 
     document.getElementsByClassName('cover')[0].style.display = "none"; 
     document.getElementsByClassName('l_body')[0].classList.add("nocover"); 
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show"); 
   } else { 
-    if ("none" == "blog") { // 半屏 
+    if ("blog" == "blog") { // 半屏 
       document.getElementsByClassName('cover')[0].classList.remove("full"); 
       document.getElementsByClassName('cover')[0].classList.add("half"); 
       document.getElementsByClassName('scroll-down')[0].style.display = "none"; 
-    } else if ("none" == "docs") { // 全屏 
+    } else if ("blog" == "docs") { // 全屏 
       document.getElementsByClassName('cover')[0].classList.remove("half"); 
       document.getElementsByClassName('cover')[0].classList.add("full"); 
       document.getElementsByClassName('scroll-down')[0].style.display = ""; 
@@ -448,7 +530,7 @@
       
       
 
-<div class='l_main no_sidebar'>
+<div class='l_main'>
   
 
   
@@ -462,9 +544,73 @@
       
       <div class="meta" id="header-meta">
         
+          
+  <h1 class="title">
+    <a href="/about/index.html">
+      关于我
+    </a>
+  </h1>
+
+
+        
         <div class='new-meta-box'>
           
+            
+          
+            
+              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-11T15:55:19+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Aug 11, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/about/" class="leancloud_visitors" data-flag-title="关于我">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/about/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/about/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
         </div>
+        
+          <hr>
         
       </div>
     
@@ -475,7 +621,23 @@
         <div class="article-entry" itemprop="articleBody">
           
           
-          <p>暂时还没时间写，等博客全搭建完了再补充</p>
+          <p><img src="https://cdn.jsdelivr.net/gh/Typhoonix/CDN-for-blog@1.13/images/wallpaper2.png" alt="1時間ドロ―イングまとめ
+Pixiv ID:77096628
+Member:みふる"></p>
+<ul>
+<li><p>广东工业大学，电子科学与技术本科在读</p>
+</li>
+<li><p>目前主要学习 Web前后端/硬件</p>
+</li>
+<li><p>有开发游戏的小想法</p>
+</li>
+<li><p>是个漫宅 - -|||</p>
+</li>
+<li><p>核乐狗，主要偏向前卫金</p>
+</li>
+<li><p>不知何时能重操旧业的混音人</p>
+</li>
+</ul>
 
           
         </div>
@@ -485,6 +647,59 @@
 
   <section class='meta' id="footer-meta">
     <div class='new-meta-box'>
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/about/index.html&title=关于我 - Typhoonix's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/about/index.html&title=关于我 - Typhoonix's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/about/index.html&title=关于我 - Typhoonix's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
       
     </div>
   </section>
@@ -524,6 +739,73 @@
 </div>
 <aside class='l_side'>
   
+  
+    
+    
+
+<section class="widget blogger shadow desktop mobile">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/about/'>
+          <img no-lazy src='https://cdn.jsdelivr.net/gh/Typhoonix/CDN-for-blog@1.11/images/blogger2.jpg'/>
+        </a>
+      
+    
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="https://twitter.com/DevilBakerLlEz"
+              class="social fab fa-twitter flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="/382693873@qq.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/Typhoonix/"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://music.163.com/#/user/home?id=80855832"
+              class="social fas fa-headphones-alt flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+  
+
+  
+
+  
+    
+    
+
+
+
+
+  
+
 
 </aside>
 
