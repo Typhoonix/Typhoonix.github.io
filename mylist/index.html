@@ -920,7 +920,7 @@
 
   
   
-<script src="https://cdn.jsdelivr.net/npm/valine@1.4/dist/Valine.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js"></script>
 
 
 <script>
@@ -964,6 +964,8 @@
     if(ALLPATH != '') pageUrl = ALLPATH;
 
     var valine = new Valine();
+    var friends = ''.split(',');
+    var master = '53c80118099bec2a0a8d92bcea8ced98'.split(',');
     valine.init({
       el: '#valine_container',
       meta: meta,
@@ -980,7 +982,9 @@
       enableQQ: 'true',
       requiredFields: requiredFields,
       emojiCDN: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-emoji/valine/',
-      emojiMaps: emojiMaps
+      emojiMaps: emojiMaps,
+      master: master,
+      friends: friends
     })
   }
 
