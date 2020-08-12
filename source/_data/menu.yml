@@ -1,0 +1,25 @@
+- name: 博客
+  icon: fas fa-rss
+  url: /
+- name: 引索
+  icon: fas fa-ellipsis-v
+  rows:
+    - name: 分类
+      icon: fas fa-folder-open
+      url: /categories/
+    - name: 标签
+      icon: fas fa-tags
+      url: /tags/
+    - name: 时间轴
+      icon: fas fa-archive
+      url: /archives/
+- name: 关于
+  icon: fas fa-info-circle
+  rows:
+    - name: 我的信息
+      icon: fas fa-info-circle
+      url: /about/
+    - name: hr
+    - name: 友链
+      icon: fas fa-link
+      url: /friends/
