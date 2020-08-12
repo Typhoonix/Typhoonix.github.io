@@ -16,9 +16,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>Typhoonix&#39;s Blog</title>
+  <title>PTA平衡二叉树的根 - Typhoonix&#39;s Blog</title>
+  
+    <meta name="keywords" content="C语言,数据结构">
   
 
+  
+    <meta name="description" content="涉及到左单旋、右单旋、左右双旋、右左双旋的操作，值得记录">
   
 
   <!-- feed -->
@@ -93,7 +97,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover list' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -497,8 +501,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">false</div> 
-  <div id="pjax-pageTitle"></div> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">PTA平衡二叉树的根</div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -530,172 +534,311 @@
       
       
 
-
 <div class='l_main'>
   
-    <section class="post-list ">
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    </section>
-    
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h1 class="title">
+    <a href="/2020/08/13/PTA%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%A0%B9/">
+      PTA平衡二叉树的根
+    </a>
+  </h1>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>数据结构</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-13T00:43:41+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Aug 13, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>963 words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>4 min</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/08/13/PTA%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%A0%B9/" class="leancloud_visitors" data-flag-title="PTA平衡二叉树的根">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/08/13/PTA%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%A0%B9/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/08/13/PTA%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%A0%B9/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <p>涉及到左单旋、右单旋、左右双旋、右左双旋的操作，值得记录</p>
+<a id="more"></a>
+
+<h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>将给定的一系列数字插入初始为空的AVL树，请你输出最后生成的AVL树的根结点的值。</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>输入的第一行给出一个正整数N（≤20），随后一行给出N个不同的整数，其间以空格分隔。</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>在一行中输出顺序插入上述整数到一棵初始为空的AVL树后，该树的根结点的值。</p>
+<h2 id="输入样例1"><a href="#输入样例1" class="headerlink" title="输入样例1"></a>输入样例1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">88 70 61 96 120</span><br></pre></td></tr></table></figure>
+
+<h2 id="输出样例1"><a href="#输出样例1" class="headerlink" title="输出样例1"></a>输出样例1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">70</span><br></pre></td></tr></table></figure>
+
+<h2 id="输入样例2"><a href="#输入样例2" class="headerlink" title="输入样例2"></a>输入样例2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">7</span><br><span class="line">88 70 61 96 120 90 65</span><br></pre></td></tr></table></figure>
+
+<h2 id="输出样例2"><a href="#输出样例2" class="headerlink" title="输出样例2"></a>输出样例2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">88</span><br></pre></td></tr></table></figure>
+
+<h2 id="C语言解法"><a href="#C语言解法" class="headerlink" title="C语言解法"></a>C语言解法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;stdlib.h&gt;</span><br><span class="line">typedef int ElementType;</span><br><span class="line"></span><br><span class="line">typedef struct AVLNode *Position;</span><br><span class="line">typedef Position AVLTree; &#x2F;* AVL树类型 *&#x2F;</span><br><span class="line">struct AVLNode&#123;</span><br><span class="line">    ElementType Data; &#x2F;* 结点数据 *&#x2F;</span><br><span class="line">    AVLTree Left;     &#x2F;* 指向左子树 *&#x2F;</span><br><span class="line">    AVLTree Right;    &#x2F;* 指向右子树 *&#x2F;</span><br><span class="line">    int Height;       &#x2F;* 树高 *&#x2F;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">int Max ( int a, int b )</span><br><span class="line">&#123;</span><br><span class="line">    return a &gt; b ? a : b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int GetHeight( AVLTree A ) &#123;</span><br><span class="line">    if(A &#x3D;&#x3D; NULL) &#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    return A-&gt;Height;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AVLTree SingleLeftRotation ( AVLTree A )</span><br><span class="line">&#123; &#x2F;* 注意：A必须有一个左子结点B *&#x2F;</span><br><span class="line">  &#x2F;* 将A与B做左单旋，更新A与B的高度，返回新的根结点B *&#x2F;     </span><br><span class="line"> </span><br><span class="line">    AVLTree B &#x3D; A-&gt;Left;</span><br><span class="line">    A-&gt;Left &#x3D; B-&gt;Right;</span><br><span class="line">    B-&gt;Right &#x3D; A;</span><br><span class="line">    A-&gt;Height &#x3D; Max( GetHeight(A-&gt;Left), GetHeight(A-&gt;Right) ) + 1;</span><br><span class="line">    B-&gt;Height &#x3D; Max( GetHeight(B-&gt;Left), A-&gt;Height ) + 1;</span><br><span class="line">  </span><br><span class="line">    return B;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AVLTree SingleRightRotation ( AVLTree A )</span><br><span class="line">&#123; &#x2F;* 注意：A必须有一个右子结点B *&#x2F;</span><br><span class="line">  &#x2F;* 将A与B做右单旋，更新A与B的高度，返回新的根结点B *&#x2F;</span><br><span class="line"></span><br><span class="line">    AVLTree B &#x3D; A-&gt;Right;</span><br><span class="line">    A-&gt;Right &#x3D; B-&gt;Left;</span><br><span class="line">    B-&gt;Left &#x3D; A;</span><br><span class="line">    A-&gt;Height &#x3D; Max( GetHeight(A-&gt;Left), GetHeight(A-&gt;Right) ) + 1;</span><br><span class="line">    B-&gt;Height &#x3D; Max( GetHeight(B-&gt;Right), A-&gt;Height ) + 1;</span><br><span class="line"></span><br><span class="line">    return B;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">AVLTree DoubleLeftRightRotation ( AVLTree A )</span><br><span class="line">&#123; &#x2F;* 注意：A必须有一个左子结点B，且B必须有一个右子结点C *&#x2F;</span><br><span class="line">  &#x2F;* 将A、B与C做两次单旋，返回新的根结点C *&#x2F;</span><br><span class="line">     </span><br><span class="line">    &#x2F;* 将B与C做右单旋，C被返回 *&#x2F;</span><br><span class="line">    A-&gt;Left &#x3D; SingleRightRotation(A-&gt;Left);</span><br><span class="line">    &#x2F;* 将A与C做左单旋，C被返回 *&#x2F;</span><br><span class="line">    return SingleLeftRotation(A);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AVLTree DoubleRightLeftRotation ( AVLTree A )</span><br><span class="line">&#123; &#x2F;* 注意：A必须有一个左子结点B，且B必须有一个右子结点C *&#x2F;</span><br><span class="line">  &#x2F;* 将A、B与C做两次单旋，返回新的根结点C *&#x2F;</span><br><span class="line">     </span><br><span class="line">    &#x2F;* 将B与C做右单旋，C被返回 *&#x2F;</span><br><span class="line">    A-&gt;Right &#x3D; SingleLeftRotation(A-&gt;Right);</span><br><span class="line">    &#x2F;* 将A与C做左单旋，C被返回 *&#x2F;</span><br><span class="line">    return SingleRightRotation(A);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">AVLTree Insert( AVLTree T, ElementType X )</span><br><span class="line">&#123; &#x2F;* 将X插入AVL树T中，并且返回调整后的AVL树 *&#x2F;</span><br><span class="line">    if ( !T ) &#123; &#x2F;* 若插入空树，则新建包含一个结点的树 *&#x2F;</span><br><span class="line">        T &#x3D; (AVLTree)malloc(sizeof(struct AVLNode));</span><br><span class="line">        T-&gt;Data &#x3D; X;</span><br><span class="line">        T-&gt;Height &#x3D; 0;</span><br><span class="line">        T-&gt;Left &#x3D; T-&gt;Right &#x3D; NULL;</span><br><span class="line">    &#125; &#x2F;* if (插入空树) 结束 *&#x2F;</span><br><span class="line"> </span><br><span class="line">    else if ( X &lt; T-&gt;Data ) &#123;</span><br><span class="line">        &#x2F;* 插入T的左子树 *&#x2F;</span><br><span class="line">        T-&gt;Left &#x3D; Insert( T-&gt;Left, X);</span><br><span class="line">        &#x2F;* 如果需要左旋 *&#x2F;</span><br><span class="line">        if ( GetHeight(T-&gt;Left)-GetHeight(T-&gt;Right) &gt; 1 )</span><br><span class="line">            if ( X &lt; T-&gt;Left-&gt;Data ) </span><br><span class="line">               T &#x3D; SingleLeftRotation(T);      &#x2F;* 左单旋 *&#x2F;</span><br><span class="line">            else </span><br><span class="line">               T &#x3D; DoubleLeftRightRotation(T); &#x2F;* 左-右双旋 *&#x2F;</span><br><span class="line">    &#125; &#x2F;* else if (插入左子树) 结束 *&#x2F;</span><br><span class="line">     </span><br><span class="line">    else if ( X &gt; T-&gt;Data ) &#123;</span><br><span class="line">        &#x2F;* 插入T的右子树 *&#x2F;</span><br><span class="line">        T-&gt;Right &#x3D; Insert( T-&gt;Right, X );</span><br><span class="line">        &#x2F;* 如果需要右旋 *&#x2F;</span><br><span class="line">        if ( GetHeight(T-&gt;Left)-GetHeight(T-&gt;Right) &lt; -1 )</span><br><span class="line">            if ( X &gt; T-&gt;Right-&gt;Data ) </span><br><span class="line">               T &#x3D; SingleRightRotation(T);     &#x2F;* 右单旋 *&#x2F;</span><br><span class="line">            else </span><br><span class="line">               T &#x3D; DoubleRightLeftRotation(T); &#x2F;* 右-左双旋 *&#x2F;</span><br><span class="line">    &#125; &#x2F;* else if (插入右子树) 结束 *&#x2F;</span><br><span class="line"> </span><br><span class="line">    &#x2F;* else X &#x3D;&#x3D; T-&gt;Data，无须插入 *&#x2F;</span><br><span class="line"> </span><br><span class="line">    &#x2F;* 别忘了更新树高 *&#x2F;</span><br><span class="line">    T-&gt;Height &#x3D; Max( GetHeight(T-&gt;Left), GetHeight(T-&gt;Right) ) + 1;</span><br><span class="line">     </span><br><span class="line">    return T;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    AVLTree A &#x3D; NULL;</span><br><span class="line">    int height, X;</span><br><span class="line">    scanf(&quot;%d&quot;, &amp;height);</span><br><span class="line">    for(int i &#x3D; 0; i &lt; height; i++) &#123;</span><br><span class="line">        scanf(&quot;%d&quot;, &amp;X);</span><br><span class="line">        A &#x3D; Insert(A, X);</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%d\n&quot;, A-&gt;Data);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          
+<div class='new-meta-item author'>
+  <a class='author' target="_blank" href="https://typhoonix.top" rel="nofollow noopener">
+    <img no-lazy src="">
+    <p>Typhoonix</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/C%E8%AF%AD%E8%A8%80/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>C语言</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>数据结构</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/08/13/PTA%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%A0%B9/&title=PTA平衡二叉树的根 - Typhoonix's Blog&summary=涉及到左单旋、右单旋、左右双旋、右左双旋的操作，值得记录"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/08/13/PTA%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%A0%B9/&title=PTA平衡二叉树的根 - Typhoonix's Blog&summary=涉及到左单旋、右单旋、左右双旋、右左双旋的操作，值得记录"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/08/13/PTA%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%A0%B9/&title=PTA平衡二叉树的根 - Typhoonix's Blog&summary=涉及到左单旋、右单旋、左右双旋、右左双旋的操作，值得记录"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/08/13/PTA%E6%98%AF%E5%90%A6%E5%90%8C%E4%B8%80%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91/'>
+                <p class='title'>PTA是否同一二叉搜索树<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>树的基本练习，算是吧。。。
+
+
+题目给定一个插入序列就可以唯一确定一棵二叉搜索树。然而，一棵给定的二叉搜索树却可以由多种不同的插入序列得到。例如分别按照序列{2, 1, 3}和{2, 3, 1}...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
+  
+    
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
+
+  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
 </div>
 <aside class='l_side'>
   
   
-    
-    
-
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/Typhoonix/CDN-for-blog@1.11/images/blogger2.jpg'/>
-        </a>
-      
-    
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="https://twitter.com/DevilBakerLlEz"
-              class="social fab fa-twitter flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="/382693873@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/Typhoonix/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=80855832"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
 
   
     
     
   
 
-  <section class="widget category shadow desktop">
+  <section class="widget related_posts shadow desktop mobile">
     
   <header>
     
-      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
     
   </header>
 
 
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Diary/" href="/categories/Diary/"
-            id="categoriesDiary"
-            ><div class='name'>Diary</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
-            id="categoriesE695B0E68DAEE7BB93E69E84"
-            ><div class='name'>数据结构</div><div class='badge'>(10)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/"
-            id="categoriesE695B0E68DAEE7BB93E69E84E7AE97E6B395"
-            ><div class='name'>算法</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%97%A5%E8%AF%AD/" href="/categories/%E6%97%A5%E8%AF%AD/"
-            id="categoriesE697A5E8AFAD"
-            ><div class='name'>日语</div><div class='badge'>(2)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Blog/" style="font-size: 14px; color: #999">Blog</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 24px; color: #555">C语言</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 19px; color: #777">数据结构</a> <a href="/tags/%E6%97%A5%E8%AF%AD/" style="font-size: 16.5px; color: #888">日语</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 21.5px; color: #666">算法</a>
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\08\13\二叉搜索树的操作集\" title="二叉树搜索树的操作集" rel="bookmark">二叉树搜索树的操作集</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\08\13\二叉树遍历\" title="二叉树遍历" rel="bookmark">二叉树遍历</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\08\12\MaximumSubsequenceSum解法\" title="MaximumSubsequenceSum解法" rel="bookmark">MaximumSubsequenceSum解法</a></h3></div></li><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\08\13\PTA一元多项式的乘法和加法运算\" title="一元多项式的乘法与加法运算" rel="bookmark">一元多项式的乘法与加法运算</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -706,79 +849,28 @@
     
     
 
-<section class="widget shadow desktop">
-  
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
+    
   <header>
     
-      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>13 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2020/08/09'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>8.1k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div>2020-08-13 日</div>
-          
-        </div>
-        
-      
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE"><span class="toc-text">题目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F"><span class="toc-text">输入格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F"><span class="toc-text">输出格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B1"><span class="toc-text">输入样例1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B1"><span class="toc-text">输出样例1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B2"><span class="toc-text">输入样例2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B2"><span class="toc-text">输出样例2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C%E8%AF%AD%E8%A8%80%E8%A7%A3%E6%B3%95"><span class="toc-text">C语言解法</span></a></li></ol>
     </div>
-  </div>
-</section>
+  </section>
 
-  
 
   
 
 
 </aside>
+
 
 
     </div>
