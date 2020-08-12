@@ -141,5 +141,5 @@ backup:
   theme: volantis
   message: Back up my typhoonix's blog
   repository:
-    github: git@github.com:Typhoonix/Typhoonix.github.io.git
-    coding: git@e.coding.net:typhoonix/typhoonix/typhoonix.git
+    github: git@github.com:Typhoonix/Typhoonix.github.io.git, backup
+    coding: git@e.coding.net:typhoonix/typhoonix/typhoonix.git, backup
