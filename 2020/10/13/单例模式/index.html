@@ -5,10 +5,6 @@
   <!-- SEO相关 -->
   
     
-      
-        <meta name="robots" content="noindex,follow">
-      
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -20,9 +16,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>Typhoonix&#39;s Blog</title>
+  <title>Java单例模式详解 - Typhoonix&#39;s Blog</title>
+  
+    <meta name="keywords" content="java,后端">
   
 
+  
+    <meta name="description" content="关于java单例模式的详解，面试貌似会经常碰到，而且里边也藏着很深的知识点，特此记录一下">
   
 
   <!-- feed -->
@@ -97,7 +97,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -501,8 +501,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">false</div> 
-  <div id="pjax-pageTitle"></div> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">Java单例模式详解</div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -536,14 +536,10 @@
 
 <div class='l_main'>
   
-  <section class="post-list ">
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -553,11 +549,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/08/12/PTA%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E6%B3%95/">
-      PTA二分查找法
+  <h1 class="title">
+    <a href="/2020/10/13/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
+      Java单例模式详解
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -569,9 +565,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/' rel="nofollow">
+    <a href='/categories/%E5%90%8E%E7%AB%AF/java/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>数据结构/算法</p>
+      <p>后端/java</p>
     </a>
   </div>
 
@@ -579,10 +575,10 @@
             
           
             
-              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-13T00:21:16+08:00">
+              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-13T21:56:43+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 13, 2020</p>
+    <p>更新于：Oct 13, 2020</p>
   </a>
 </div>
 
@@ -593,13 +589,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>399 words</p>
+      <p>2k words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>1 min</p>
+      <p>8 min</p>
     </a>
   </div>
 
@@ -612,7 +608,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/2020/08/12/PTA%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E6%B3%95/" class="leancloud_visitors" data-flag-title="PTA二分查找法">
+      <span id="/2020/10/13/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/" class="leancloud_visitors" data-flag-title="Java单例模式详解">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -627,9 +623,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/2020/08/12/PTA%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E6%B3%95/#comments">
+  <a href="/2020/10/13/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/12/PTA%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E6%B3%95/">0</span>
+    <span class="valine-comment-count" data-xid="/2020/10/13/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -651,831 +647,282 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>挺早学但好像挺重要的，姑且记录一下，还是C语言解法</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/12/PTA%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E6%B3%95/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <p>关于java单例模式的详解，面试貌似会经常碰到，而且里边也藏着很深的知识点，特此记录一下</p>
+<a id="more"></a>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+<p>首先是简单的实现方法</p>
+<p>懒汉式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton &#123;</span><br><span class="line">    private Singleton() &#123;&#125;  &#x2F;&#x2F;私有构造函数</span><br><span class="line">    private static Singleton instance &#x3D; null;  &#x2F;&#x2F;单例对象</span><br><span class="line">    &#x2F;&#x2F;静态工厂方法</span><br><span class="line">    public static Singleton getInstance() &#123;</span><br><span class="line">        if (instance &#x3D;&#x3D; null) &#123;</span><br><span class="line">            instance &#x3D; new Singleton();</span><br><span class="line">        &#125;</span><br><span class="line">        return instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>饿汉式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton &#123;</span><br><span class="line">    private static Singleton instance &#x3D; new Singleton();</span><br><span class="line"> </span><br><span class="line">    &#x2F;&#x2F; 私有化构造方法</span><br><span class="line">    private Singleton() &#123;</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    public static Singleton getInstance() &#123;</span><br><span class="line">        return instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>为什么这样写呢？我们来解释几个关键点：</p>
+<p>1.要想让一个类只能构建一个对象，自然不能让它随便去做new操作，因此Signleton的构造方法是私有的。</p>
+<p>2.instance是Singleton类的静态成员，也是我们的单例对象。它的初始值可以写成Null，也可以写成new Singleton()。至于其中的区别后来会做解释。</p>
+<p>3.getInstance是获取单例对象的方法。</p>
+<p>如果单例初始值是null，还未构建，则构建单例对象并返回。这个写法属于单例模式当中的<strong>懒汉模式</strong>。</p>
+<p>如果单例对象一开始就被new Singleton()主动构建，则不再需要判空操作，这种写法属于<strong>饿汉模式</strong>。</p>
+<p>这两个名字很形象：饿汉主动找食物吃，懒汉躺在地上等着人喂。</p>
+<p><strong>但此写法的线程并不安全</strong></p>
+<p>why？</p>
+<p>假设Singleton类刚刚被初始化，instance对象还是空，这时候两个线程同时访问getInstance方法：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-481b3eb9e0e8b2388e6f9a60b09c8365_720w.jpg"></p>
+<p>因为Instance是空，所以两个线程同时通过了条件判断，开始执行new操作：</p>
+<p><img src="https://pic3.zhimg.com/80/v2-612ecb9f6761339b4689226fa1cf32e2_720w.jpg"></p>
+<p>这样一来，显然instance被构建了两次。让我们对代码做一下修改：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton &#123;</span><br><span class="line">    private Singleton() &#123;&#125;  &#x2F;&#x2F;私有构造函数</span><br><span class="line">   private static Singleton instance &#x3D; null;  &#x2F;&#x2F;单例对象</span><br><span class="line">   &#x2F;&#x2F;静态工厂方法</span><br><span class="line">   public static Singleton getInstance() &#123;</span><br><span class="line">        if (instance &#x3D;&#x3D; null) &#123;      &#x2F;&#x2F;双重检测机制</span><br><span class="line">         synchronized (Singleton.class)&#123;  &#x2F;&#x2F;同步锁</span><br><span class="line">           if (instance &#x3D;&#x3D; null) &#123;     &#x2F;&#x2F;双重检测机制</span><br><span class="line">             instance &#x3D; new Singleton();</span><br><span class="line">               &#125;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;</span><br><span class="line">        return instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>为什么这样写呢？我们来解释几个关键点：</p>
+<p>1.为了防止new Singleton被执行多次，因此在new操作之前加上Synchronized 同步锁，锁住整个类（注意，这里不能使用对象锁）。</p>
+<p>2.进入Synchronized 临界区以后，还要再做一次判空。因为当两个线程同时访问的时候，线程A构建完对象，线程B也已经通过了最初的判空验证，不做第二次判空的话，线程B还是会再次构建instance对象。</p>
+<p><img src="https://pic3.zhimg.com/80/v2-08b6606026cce318b0a9c3a5242ddba2_720w.jpg"></p>
+<p><img src="https://pic1.zhimg.com/80/v2-0f9fc324f108c05c5c84d3273bfb49ec_720w.jpg"></p>
+<p><img src="https://pic2.zhimg.com/80/v2-824f26d3d831cd4e70ae518e85718b4d_720w.jpg"></p>
+<p><img src="https://pic1.zhimg.com/80/v2-5b0116783c1965f2e5921a97ccbd3414_720w.jpg"></p>
+<p><img src="https://pic2.zhimg.com/80/v2-611429cbf0b532056113e0d2eb36d911_720w.jpg"></p>
+<p>像这样两次判空的机制叫做<strong>双重检测机制</strong>。</p>
+<p><strong>可是这并非是绝对线程安全的</strong></p>
+<p>why?</p>
+<p>这里涉及到了JVM编译器的<strong>指令重排</strong>。</p>
+<p>指令重排是什么意思呢？比如java中简单的一句 instance = new Singleton，会被编译器编译成如下JVM指令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">memory &#x3D;allocate(); &#x2F;&#x2F;1：分配对象的内存空间</span><br><span class="line"></span><br><span class="line">ctorInstance(memory); &#x2F;&#x2F;2：初始化对象</span><br><span class="line"></span><br><span class="line">instance &#x3D;memory; &#x2F;&#x2F;3：设置instance指向刚分配的内存地址</span><br></pre></td></tr></table></figure>
+
+
+<p>但是这些指令顺序并非一成不变，有可能会经过JVM和CPU的优化，指令重排成下面的顺序：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">memory &#x3D;allocate(); &#x2F;&#x2F;1：分配对象的内存空间</span><br><span class="line"></span><br><span class="line">instance &#x3D;memory; &#x2F;&#x2F;3：设置instance指向刚分配的内存地址</span><br><span class="line"></span><br><span class="line">ctorInstance(memory); &#x2F;&#x2F;2：初始化对象</span><br></pre></td></tr></table></figure>
+
+<p>当线程A执行完1,3,时，instance对象还未完成初始化，但已经不再指向null。此时如果线程B抢占到CPU资源，执行 if（instance == null）的结果会是false，从而返回一个没有初始化完成的instance对象。如下图所示：</p>
+<p><img src="https://pic4.zhimg.com/80/v2-0d53745df463dc56e2990a165a50ef9b_720w.jpg"></p>
+<p><img src="https://pic3.zhimg.com/80/v2-a9def40d42fd3a2e53f84e95112733a6_720w.jpg"></p>
+<p>如何避免这一情况呢？我们需要在instance对象前面增加一个修饰符<strong>volatile</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton &#123;</span><br><span class="line">    private Singleton() &#123;&#125;  &#x2F;&#x2F;私有构造函数</span><br><span class="line">    private volatile static Singleton instance &#x3D; null;  &#x2F;&#x2F;单例对象</span><br><span class="line">    &#x2F;&#x2F;静态工厂方法</span><br><span class="line">    public static Singleton getInstance() &#123;</span><br><span class="line">          if (instance &#x3D;&#x3D; null) &#123;      &#x2F;&#x2F;双重检测机制</span><br><span class="line">         synchronized (Singleton.class)&#123;  &#x2F;&#x2F;同步锁</span><br><span class="line">           if (instance &#x3D;&#x3D; null) &#123;     &#x2F;&#x2F;双重检测机制</span><br><span class="line">             instance &#x3D; new Singleton();</span><br><span class="line">                &#125;</span><br><span class="line">             &#125;</span><br><span class="line">          &#125;</span><br><span class="line">          return instance;</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>volatile修饰符阻止了变量访问前后的指令重排，保证了指令执行顺序。</p>
+<p>经过volatile的修饰，当线程A执行instance = new Singleton的时候，JVM执行顺序是什么样？始终保证是下面的顺序：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">memory &#x3D;allocate(); &#x2F;&#x2F;1：分配对象的内存空间</span><br><span class="line"></span><br><span class="line">ctorInstance(memory); &#x2F;&#x2F;2：初始化对象</span><br><span class="line"></span><br><span class="line">instance &#x3D;memory; &#x2F;&#x2F;3：设置instance指向刚分配的内存地址</span><br></pre></td></tr></table></figure>
+
+<p>如此在线程B看来，instance对象的引用要么指向null，要么指向一个初始化完毕的Instance，而不会出现某个中间态，保证了安全。</p>
+<p><strong>还有其他实现单例模式的方法：</strong></p>
+<p>用静态内部类实现单例模式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class Singleton &#123;</span><br><span class="line">    private static class LazyHolder &#123;</span><br><span class="line">        private static final Singleton INSTANCE &#x3D; new Singleton();</span><br><span class="line">    &#125;</span><br><span class="line">    private Singleton ()&#123;&#125;</span><br><span class="line">    public static Singleton getInstance() &#123;</span><br><span class="line">        return LazyHolder.INSTANCE;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里有几个需要注意的点：</p>
+<p>1.从外部无法访问静态内部类LazyHolder，只有当调用Singleton.getInstance方法的时候，才能得到单例对象INSTANCE。</p>
+<p>2.INSTANCE对象初始化的时机并不是在单例类Singleton被加载的时候，而是在调用getInstance方法，使得静态内部类LazyHolder被加载的时候。因此这种实现方式是利用<strong>classloader的加载机制</strong>来实现懒加载，并保证构建单例的线程安全。</p>
+<p>利用反射打破单例模式的约束，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;获得构造器</span><br><span class="line">Constructor con &#x3D; Singleton.class.getDeclaredConstructor();</span><br><span class="line">&#x2F;&#x2F;设置为可访问</span><br><span class="line">con.setAccessible(true);</span><br><span class="line">&#x2F;&#x2F;构造两个不同的对象</span><br><span class="line">Singleton singleton1 &#x3D; (Singleton)con.newInstance();</span><br><span class="line">Singleton singleton2 &#x3D; (Singleton)con.newInstance();</span><br><span class="line">&#x2F;&#x2F;验证是否是不同对象</span><br><span class="line">System.out.println(singleton1.equals(singleton2));</span><br></pre></td></tr></table></figure>
+
+<p>代码可以简单归纳为三个步骤：</p>
+<p>第一步，获得单例类的构造器。</p>
+<p>第二步，把构造器设置为可访问。</p>
+<p>第三步，使用newInstance方法构造对象。</p>
+<p>最后为了确认这两个对象是否真的是不同的对象，我们使用equals方法进行比较。毫无疑问，比较结果是false。</p>
+<p>可以用枚举法实现单例模式，防止反射，也能保证线程安全：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public enum SingletonEnum &#123;</span><br><span class="line">    INSTANCE;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在使用枚举法的情况下仍然执行刚刚的反射代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;获得构造器</span><br><span class="line">Constructor con &#x3D; Singleton.class.getDeclaredConstructor();</span><br><span class="line">&#x2F;&#x2F;设置为可访问</span><br><span class="line">con.setAccessible(true);</span><br><span class="line">&#x2F;&#x2F;构造两个不同的对象</span><br><span class="line">Singleton singleton1 &#x3D; (Singleton)con.newInstance();</span><br><span class="line">Singleton singleton2 &#x3D; (Singleton)con.newInstance();</span><br><span class="line">&#x2F;&#x2F;验证是否是不同对象</span><br><span class="line">System.out.println(singleton1.equals(singleton2));</span><br></pre></td></tr></table></figure>
+
+<p>执行获得构造器这一步的时候，抛出了如下异常：</p>
+<p>Exception in thread “main” java.lang.NoSuchMethodException: com.xiaohui.singleton.test.SingletonEnum.<init>()</p>
+<p>at java.lang.Class.getConstructor0(Class.java:2892)</p>
+<p>at java.lang.Class.getDeclaredConstructor(Class.java:2058)</p>
+<p>at com.xiaohui.singleton.test.SingletonTest.main(SingletonTest.java:22)</p>
+<p>at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)</p>
+<p>at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)</p>
+<p>at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)</p>
+<p>at java.lang.reflect.Method.invoke(Method.java:606)</p>
+<p>at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)</p>
+<p>枚举法缺点：并非使用懒加载，其单例模式是在枚举类被加载的时候进行初始化的。</p>
+<p><strong>总结：</strong></p>
+<p><img src="https://pic1.zhimg.com/80/v2-cd8485a2a815ee615d5857a98702e8f0_720w.jpg"></p>
+<p>几点补充：</p>
+<ol>
+<li><p>volatile关键字不但可以防止指令重排，也可以保证线程访问的变量值是主内存中的最新值。有关volatile的详细原理，我在以后的漫画中会专门讲解。</p>
+</li>
+<li><p>使用枚举实现的单例模式，不但可以防止利用反射强行构建单例对象，而且可以在枚举类对象被反序列化的时候，保证反序列的返回结果是同一对象。对于其他方式实现的单例模式，如果既想要做到可序列化，又想要反序列化为同一对象，则必须实现readResolve方法。</p>
+</li>
+</ol>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
   
 
 
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/12/MaximumSubsequenceSum%E8%A7%A3%E6%B3%95/">
-      MaximumSubsequenceSum解法
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
               
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>数据结构/算法</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-12T23:39:25+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 12, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>330 words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>1 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/12/MaximumSubsequenceSum%E8%A7%A3%E6%B3%95/" class="leancloud_visitors" data-flag-title="MaximumSubsequenceSum解法">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/12/MaximumSubsequenceSum%E8%A7%A3%E6%B3%95/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/12/MaximumSubsequenceSum%E8%A7%A3%E6%B3%95/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
+            </div>
           
         </div>
         
-          <hr>
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
         
-      </div>
-    
-  </section>
+          
+<div class='new-meta-item author'>
+  <a class='author' target="_blank" href="https://typhoonix.top" rel="nofollow noopener">
+    <img no-lazy src="">
+    <p>Typhoonix</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/java/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>java</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%90%8E%E7%AB%AF/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>后端</p></a></div>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
+        
       
-        <p>最大子列和问题的变种，无非就是多加了找出最大子列和的第一个元素和最后一个元素</p>
+        
+          
+
+        
       
-    </div>
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        <a class= "readmore" href="/2020/08/12/MaximumSubsequenceSum%E8%A7%A3%E6%B3%95/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/10/13/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/&title=Java单例模式详解 - Typhoonix's Blog&summary=关于java单例模式的详解，面试貌似会经常碰到，而且里边也藏着很深的知识点，特此记录一下"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
         </a>
       
     
-  </section>
-</article>
-
-          </div>
-        
       
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-  <h2 class="title">
-    <a href="/2020/08/12/PTA%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C%E9%97%AE%E9%A2%98/">
-      PTA最大子列和问题
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/10/13/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/&title=Java单例模式详解 - Typhoonix's Blog&summary=关于java单例模式的详解，面试貌似会经常碰到，而且里边也藏着很深的知识点，特此记录一下"
           
-            
+          >
           
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>数据结构/算法</p>
-    </a>
-  </div>
-
-
-            
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
           
-            
-              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-13T00:01:41+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 13, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>442 words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>1 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/12/PTA%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C%E9%97%AE%E9%A2%98/" class="leancloud_visitors" data-flag-title="PTA最大子列和问题">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/12/PTA%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C%E9%97%AE%E9%A2%98/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/12/PTA%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C%E9%97%AE%E9%A2%98/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>采用C语言解法，后续可能会补充其他语种的写法</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/12/PTA%E6%9C%80%E5%A4%A7%E5%AD%90%E5%88%97%E5%92%8C%E9%97%AE%E9%A2%98/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
         </a>
       
     
-  </section>
-</article>
-
-          </div>
-        
       
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-  <h2 class="title">
-    <a href="/2020/08/12/%E6%97%A5%E8%AF%AD%E6%A0%BC%E5%8A%A9%E8%AF%8D%E5%85%A8%E8%A7%A3/">
-      日语格助词全解
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/10/13/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/&title=Java单例模式详解 - Typhoonix's Blog&summary=关于java单例模式的详解，面试貌似会经常碰到，而且里边也藏着很深的知识点，特此记录一下"
           
-            
+          >
           
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E6%97%A5%E8%AF%AD/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>日语</p>
-    </a>
-  </div>
-
-
-            
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
           
-            
-              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-12T14:06:19+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 12, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>1.1k words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>4 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/12/%E6%97%A5%E8%AF%AD%E6%A0%BC%E5%8A%A9%E8%AF%8D%E5%85%A8%E8%A7%A3/" class="leancloud_visitors" data-flag-title="日语格助词全解">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/12/%E6%97%A5%E8%AF%AD%E6%A0%BC%E5%8A%A9%E8%AF%8D%E5%85%A8%E8%A7%A3/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/12/%E6%97%A5%E8%AF%AD%E6%A0%BC%E5%8A%A9%E8%AF%8D%E5%85%A8%E8%A7%A3/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>整理一下日语的所有格助词用法，例如常用的が、を、に</p>
-<p>仅供参考，怎么理解还得靠自己</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/12/%E6%97%A5%E8%AF%AD%E6%A0%BC%E5%8A%A9%E8%AF%8D%E5%85%A8%E8%A7%A3/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
         </a>
       
     
-  </section>
-</article>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/12/%E6%97%A5%E8%AF%AD%E5%8A%A8%E8%AF%8D%E5%8F%98%E5%BD%A2/">
-      日语动词变形方法全解
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E6%97%A5%E8%AF%AD/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>日语</p>
-    </a>
   </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-12T12:14:27+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 12, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>904 words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>3 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/12/%E6%97%A5%E8%AF%AD%E5%8A%A8%E8%AF%8D%E5%8F%98%E5%BD%A2/" class="leancloud_visitors" data-flag-title="日语动词变形方法全解">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/12/%E6%97%A5%E8%AF%AD%E5%8A%A8%E8%AF%8D%E5%8F%98%E5%BD%A2/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/12/%E6%97%A5%E8%AF%AD%E5%8A%A8%E8%AF%8D%E5%8F%98%E5%BD%A2/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
 </div>
 
 
-            
-          
-            
-              
 
-            
-          
-        </div>
         
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在学习日语的过程中动词变形还是比较难的一道坎，在此做一个整理。</p>
       
     </div>
-    
-      
-        <a class= "readmore" href="/2020/08/12/%E6%97%A5%E8%AF%AD%E5%8A%A8%E8%AF%8D%E5%8F%98%E5%BD%A2/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
   </section>
-</article>
 
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/08/22/PTA%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/'>
+                <p class='title'>PTA排序算法<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>整理一下各种排序算法的C语言写法以及运行结果，对排序有个清晰认知
+
+
+题目给定N个（长整型范围内的）整数，要求输出从小到大排序后的结果。
+本题旨在测试各种不同的排序算法在各种数据情况下的表现。各...</p>
+              </a>
+            
           </div>
         
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+      </section>
+    </article>
   
 
-
-  <section class='meta'>
+  
     
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
       
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/09/hello-world/">
-      Hello World!
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/Diary/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Diary</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-11T15:10:15+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 11, 2020</p>
-  </a>
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>281 words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>1 min</p>
-    </a>
-  </div>
+      </section>
+    </section>
+  </article>
 
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/09/hello-world/" class="leancloud_visitors" data-flag-title="Hello World!">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/09/hello-world/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/09/hello-world/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 style="font-size:50px;font-family:UD Digi Kyokasho NP-B"><center> A New Start </center></h1>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/09/hello-world/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-      <br>
-      <div class="prev-next">
-        
-          <a class="prev" rel="prev" href="/">
-            <section class="post prev white-box shadow" >
-              <i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous&nbsp;
-            </section>
-          </a>
-        
-        <p class="current">
-          2 / 2
-        </p>
-        
-      </div>
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
 
   
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
 
 
 </div>
 <aside class='l_side'>
   
   
-    
-    
-
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/Typhoonix/CDN-for-blog@1.11/images/blogger2.jpg'/>
-        </a>
-      
-    
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="https://twitter.com/DevilBakerLlEz"
-              class="social fab fa-twitter flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="/382693873@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/Typhoonix/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=80855832"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
 
   
     
     
   
 
-  <section class="widget category shadow desktop">
+  <section class="widget related_posts shadow desktop mobile">
     
   <header>
     
-      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
     
   </header>
 
 
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Diary/" href="/categories/Diary/"
-            id="categoriesDiary"
-            ><div class='name'>Diary</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%90%8E%E7%AB%AF/" href="/categories/%E5%90%8E%E7%AB%AF/"
-            id="categoriesE5908EE7ABAF"
-            ><div class='name'>后端</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%90%8E%E7%AB%AF/java/" href="/categories/%E5%90%8E%E7%AB%AF/java/"
-            id="categoriesE5908EE7ABAFjava"
-            ><div class='name'>java</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
-            id="categoriesE695B0E68DAEE7BB93E69E84"
-            ><div class='name'>数据结构</div><div class='badge'>(12)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/"
-            id="categoriesE695B0E68DAEE7BB93E69E84E7AE97E6B395"
-            ><div class='name'>算法</div><div class='badge'>(8)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%97%A5%E8%AF%AD/" href="/categories/%E6%97%A5%E8%AF%AD/"
-            id="categoriesE697A5E8AFAD"
-            ><div class='name'>日语</div><div class='badge'>(2)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Blog/" style="font-size: 14px; color: #999">Blog</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 24px; color: #555">C语言</a> <a href="/tags/java/" style="font-size: 14px; color: #999">java</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 14px; color: #999">后端</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 19px; color: #777">数据结构</a> <a href="/tags/%E6%97%A5%E8%AF%AD/" style="font-size: 16.5px; color: #888">日语</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 21.5px; color: #666">算法</a>
+    <div class="content">
+      
     </div>
   </section>
 
@@ -1486,74 +933,8 @@
     
     
 
-<section class="widget shadow desktop">
-  
-  <header>
-    
-      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
 
 
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>16 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2020/08/09'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>13.7k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div>2020-10-13 日</div>
-          
-        </div>
-        
-      
-    </div>
-  </div>
-</section>
-
-  
 
   
 
