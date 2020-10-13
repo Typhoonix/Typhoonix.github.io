@@ -585,9 +585,154 @@
         
           
         
+          
+        
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <article class="post white-box shadow reveal ">
+  
+
+
+  <section class='meta'>
+    
+      
+      
+      <div class="meta" id="header-meta">
+        
+          
+  <h2 class="title">
+    <a href="/2020/10/13/Tomcat%E7%9A%84HTTP%E8%AF%B7%E6%B1%82/">
+      Tomcat的HTTP请求
+    </a>
+  </h2>
+
+
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/%E5%90%8E%E7%AB%AF/Web-Server/' rel="nofollow">
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <p>后端/Web Server</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-13T22:52:06+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Oct 13, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>279 words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>1 min</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+  <div class="new-meta-item browse valine">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      
+      <span id="/2020/10/13/Tomcat%E7%9A%84HTTP%E8%AF%B7%E6%B1%82/" class="leancloud_visitors" data-flag-title="Tomcat的HTTP请求">
+      <p>
+        <span class="leancloud-visitors-count"></span>
+      </p>
+      </span>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/2020/10/13/Tomcat%E7%9A%84HTTP%E8%AF%B7%E6%B1%82/#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/2020/10/13/Tomcat%E7%9A%84HTTP%E8%AF%B7%E6%B1%82/">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+            
+              
+
+            
+          
+        </div>
+        
+          <hr>
+        
+      </div>
+    
+  </section>
+
+
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+
+<p>Tomcat的http请求方式如下</p>
+<p><img src="https://img-blog.csdn.net/20180308173032224?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxNDIzMTY0Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"></p>
+<ol>
+<li>用户点击网页内容，请求被发送到本机端口8080，被在那里监听的Coyote HTTP/1.1 Connector获得。 </li>
+<li>Connector把该请求交给它所在的Service的Engine来处理，并等待Engine的回应。 </li>
+<li>Engine获得请求localhost/test/index.jsp，匹配所有的虚拟主机Host。 </li>
+<li>Engine匹配到名为localhost的Host（即使匹配不到也把请求交给该Host处理，因为该Host被定义为该Engine的默认主机），名为localhost的Host获得请求/test/index.jsp，匹配它所拥有的所有的Context。Host匹配到路径为/test的Context（如果匹配不到就把该请求交给路径名为“ ”的Context去处理）。 </li>
+<li>path=“/test”的Context获得请求/index.jsp，在它的mapping table中寻找出对应的Servlet。Context匹配到URL PATTERN为*.jsp的Servlet,对应于JspServlet类。 </li>
+<li>构造HttpServletRequest对象和HttpServletResponse对象，作为参数调用JspServlet的doGet（）或doPost（）.执行业务逻辑、数据存储等程序。 </li>
+<li>Context把执行完之后的HttpServletResponse对象返回给Host。 </li>
+<li>Host把HttpServletResponse对象返回给Engine。 </li>
+<li>Engine把HttpServletResponse对象返回Connector。 </li>
+<li>Connector把HttpServletResponse对象返回给客户Browser。</li>
+</ol>
+<p>参考博文：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u014231646/article/details/79482195">Tomcat简介</a></p>
+
+      
+    </div>
+    
+      
+    
+  </section>
+</article>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -1759,136 +1904,6 @@
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
-  
-
-
-  <section class='meta'>
-    
-      
-      
-      <div class="meta" id="header-meta">
-        
-          
-  <h2 class="title">
-    <a href="/2020/08/12/PTA%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8%E5%BA%8F%E5%88%97%E7%9A%84%E5%90%88%E5%B9%B6/">
-      PTA两个有序链表序列的合并
-    </a>
-  </h2>
-
-
-        
-        <div class='new-meta-box'>
-          
-            
-          
-            
-              
-  
-  <div class='new-meta-item category'>
-    <a href='/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>数据结构/算法</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-12T23:57:09+08:00">
-  <a class='notlink'>
-    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 12, 2020</p>
-  </a>
-</div>
-
-            
-          
-            
-              
-  <div class="new-meta-item wordcount">
-    <a class='notlink'>
-      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>422 words</p>
-    </a>
-  </div>
-  <div class="new-meta-item readtime">
-    <a class='notlink'>
-      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>2 min</p>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-  <div class="new-meta-item browse valine">
-    <a class='notlink'>
-      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
-      
-      <span id="/2020/08/12/PTA%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8%E5%BA%8F%E5%88%97%E7%9A%84%E5%90%88%E5%B9%B6/" class="leancloud_visitors" data-flag-title="PTA两个有序链表序列的合并">
-      <p>
-        <span class="leancloud-visitors-count"></span>
-      </p>
-      </span>
-    </a>
-  </div>
-
-
-            
-          
-            
-              
-<div class="new-meta-item comments-count">
-  
-  <a href="/2020/08/12/PTA%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8%E5%BA%8F%E5%88%97%E7%9A%84%E5%90%88%E5%B9%B6/#comments">
-    <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/12/PTA%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8%E5%BA%8F%E5%88%97%E7%9A%84%E5%90%88%E5%B9%B6/">0</span>
-    <span class="leancloud-comments-count">&nbsp;</span>
-  </a>
-</div>
-
-
-            
-          
-            
-              
-
-            
-          
-        </div>
-        
-          <hr>
-        
-      </div>
-    
-  </section>
-
-
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>考察链表基本操作，C语言解法</p>
-      
-    </div>
-    
-      
-        <a class= "readmore" href="/2020/08/12/PTA%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8%E5%BA%8F%E5%88%97%E7%9A%84%E5%90%88%E5%B9%B6/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
-        </a>
-      
-    
-  </section>
-</article>
-
-          </div>
-        
-      
     
   </section>
   
@@ -1999,7 +2014,12 @@
           <li><a class="flat-box"
             title="/categories/%E5%90%8E%E7%AB%AF/" href="/categories/%E5%90%8E%E7%AB%AF/"
             id="categoriesE5908EE7ABAF"
-            ><div class='name'>后端</div><div class='badge'>(1)</div></a></li>
+            ><div class='name'>后端</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box child"
+            title="/categories/%E5%90%8E%E7%AB%AF/Web-Server/" href="/categories/%E5%90%8E%E7%AB%AF/Web-Server/"
+            id="categoriesE5908EE7ABAFWeb-Server"
+            ><div class='name'>Web Server</div><div class='badge'>(1)</div></a></li>
         
           <li><a class="flat-box child"
             title="/categories/%E5%90%8E%E7%AB%AF/java/" href="/categories/%E5%90%8E%E7%AB%AF/java/"
@@ -2043,7 +2063,7 @@
 
 
     <div class='content'>
-      <a href="/tags/Blog/" style="font-size: 14px; color: #999">Blog</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 24px; color: #555">C语言</a> <a href="/tags/java/" style="font-size: 14px; color: #999">java</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 14px; color: #999">后端</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 19px; color: #777">数据结构</a> <a href="/tags/%E6%97%A5%E8%AF%AD/" style="font-size: 16.5px; color: #888">日语</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 21.5px; color: #666">算法</a>
+      <a href="/tags/Blog/" style="font-size: 14px; color: #999">Blog</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 24px; color: #555">C语言</a> <a href="/tags/Web-Server/" style="font-size: 14px; color: #999">Web Server</a> <a href="/tags/java/" style="font-size: 14px; color: #999">java</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 16.5px; color: #888">后端</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 19px; color: #777">数据结构</a> <a href="/tags/%E6%97%A5%E8%AF%AD/" style="font-size: 16.5px; color: #888">日语</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 21.5px; color: #666">算法</a>
     </div>
   </section>
 
@@ -2068,7 +2088,7 @@
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>16 篇</div>
+          <div>17 篇</div>
         </div>
       
 
@@ -2090,7 +2110,7 @@
       
         <div class="webinfo-item">
           <div>本站总字数：</div>
-          <div>13.7k 字</div>
+          <div>14k 字</div>
         </div>
       
 

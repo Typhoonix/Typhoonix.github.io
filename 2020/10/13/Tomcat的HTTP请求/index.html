@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,7 +16,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>Category: Diary - Typhoonix&#39;s Blog</title>
+  <title>Tomcat的HTTP请求 - Typhoonix&#39;s Blog</title>
+  
+    <meta name="keywords" content="后端,Web Server">
   
 
   
@@ -95,7 +95,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover ' style="display: none;">
+    <cover class='cover post' style="display: none;">
       <div class='cover-body'>
   <div class='a'>
     
@@ -499,8 +499,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">false</div> 
-  <div id="pjax-pageTitle"></div> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">Tomcat的HTTP请求</div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path">none</div> 
   <div id="pjax-comment-placeholder">none</div> 
@@ -532,25 +532,12 @@
       
       
 
-
 <div class='l_main'>
   
-    
-      
-  <section class="post-list ">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post white-box shadow reveal ">
+
   
+    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+      
 
 
   <section class='meta'>
@@ -560,11 +547,11 @@
       <div class="meta" id="header-meta">
         
           
-  <h2 class="title">
-    <a href="/2020/08/09/hello-world/">
-      Hello World!
+  <h1 class="title">
+    <a href="/2020/10/13/Tomcat%E7%9A%84HTTP%E8%AF%B7%E6%B1%82/">
+      Tomcat的HTTP请求
     </a>
-  </h2>
+  </h1>
 
 
         
@@ -576,9 +563,9 @@
               
   
   <div class='new-meta-item category'>
-    <a href='/categories/Diary/' rel="nofollow">
+    <a href='/categories/%E5%90%8E%E7%AB%AF/Web-Server/' rel="nofollow">
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>Diary</p>
+      <p>后端/Web Server</p>
     </a>
   </div>
 
@@ -586,10 +573,10 @@
             
           
             
-              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-11T15:10:15+08:00">
+              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-13T22:52:06+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 11, 2020</p>
+    <p>更新于：Oct 13, 2020</p>
   </a>
 </div>
 
@@ -600,7 +587,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>281 words</p>
+      <p>279 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -619,7 +606,7 @@
     <a class='notlink'>
       <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
       
-      <span id="/2020/08/09/hello-world/" class="leancloud_visitors" data-flag-title="Hello World!">
+      <span id="/2020/10/13/Tomcat%E7%9A%84HTTP%E8%AF%B7%E6%B1%82/" class="leancloud_visitors" data-flag-title="Tomcat的HTTP请求">
       <p>
         <span class="leancloud-visitors-count"></span>
       </p>
@@ -634,9 +621,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/2020/08/09/hello-world/#comments">
+  <a href="/2020/10/13/Tomcat%E7%9A%84HTTP%E8%AF%B7%E6%B1%82/#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/2020/08/09/hello-world/">0</span>
+    <span class="valine-comment-count" data-xid="/2020/10/13/Tomcat%E7%9A%84HTTP%E8%AF%B7%E6%B1%82/">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -658,173 +645,203 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
+      <section class="article typo">
+        <div class="article-entry" itemprop="articleBody">
+          
+          
+          <a id="more"></a>
+
+<p>Tomcat的http请求方式如下</p>
+<p><img src="https://img-blog.csdn.net/20180308173032224?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxNDIzMTY0Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"></p>
+<ol>
+<li>用户点击网页内容，请求被发送到本机端口8080，被在那里监听的Coyote HTTP/1.1 Connector获得。 </li>
+<li>Connector把该请求交给它所在的Service的Engine来处理，并等待Engine的回应。 </li>
+<li>Engine获得请求localhost/test/index.jsp，匹配所有的虚拟主机Host。 </li>
+<li>Engine匹配到名为localhost的Host（即使匹配不到也把请求交给该Host处理，因为该Host被定义为该Engine的默认主机），名为localhost的Host获得请求/test/index.jsp，匹配它所拥有的所有的Context。Host匹配到路径为/test的Context（如果匹配不到就把该请求交给路径名为“ ”的Context去处理）。 </li>
+<li>path=“/test”的Context获得请求/index.jsp，在它的mapping table中寻找出对应的Servlet。Context匹配到URL PATTERN为*.jsp的Servlet,对应于JspServlet类。 </li>
+<li>构造HttpServletRequest对象和HttpServletResponse对象，作为参数调用JspServlet的doGet（）或doPost（）.执行业务逻辑、数据存储等程序。 </li>
+<li>Context把执行完之后的HttpServletResponse对象返回给Host。 </li>
+<li>Host把HttpServletResponse对象返回给Engine。 </li>
+<li>Engine把HttpServletResponse对象返回Connector。 </li>
+<li>Connector把HttpServletResponse对象返回给客户Browser。</li>
+</ol>
+<p>参考博文：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u014231646/article/details/79482195">Tomcat简介</a></p>
+
+          
+            <div class='article_footer'>
+              
+                
+  
+    
+    
+
+
+
+  
+
+  
+    
+    
+
+
+
+  
+
+
+              
+            </div>
+          
+        </div>
+        
+          
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
       
-        <h1 style="font-size:50px;font-family:UD Digi Kyokasho NP-B"><center> A New Start </center></h1>
+        
+          
+<div class='new-meta-item author'>
+  <a class='author' target="_blank" href="https://typhoonix.top" rel="nofollow noopener">
+    <img no-lazy src="">
+    <p>Typhoonix</p>
+  </a>
+</div>
+
+        
       
-    </div>
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%90%8E%E7%AB%AF/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>后端</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Web-Server/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Web Server</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
     
       
-        <a class= "readmore" href="/2020/08/09/hello-world/">
-          阅读全文 <i class="fas fa-chevron-right"></i>
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2020/10/13/Tomcat%E7%9A%84HTTP%E8%AF%B7%E6%B1%82/&title=Tomcat的HTTP请求 - Typhoonix's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png">
+          
         </a>
       
     
-  </section>
-</article>
-
-          </div>
-        
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://yoursite.com/2020/10/13/Tomcat%E7%9A%84HTTP%E8%AF%B7%E6%B1%82/&title=Tomcat的HTTP请求 - Typhoonix's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png">
+          
+        </a>
       
     
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2020/10/13/Tomcat%E7%9A%84HTTP%E8%AF%B7%E6%B1%82/&title=Tomcat的HTTP请求 - Typhoonix's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
   </section>
+
+
+        
+        
+          <div class="prev-next">
+            
+            
+              <a class='next' href='/2020/10/13/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/'>
+                <p class='title'>Java单例模式详解<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+                <p class='content'>关于java单例模式的详解，面试貌似会经常碰到，而且里边也藏着很深的知识点，特此记录一下
+
+
+首先是简单的实现方法
+懒汉式：
+1234567891011public class Singleto...</p>
+              </a>
+            
+          </div>
+        
+      </section>
+    </article>
+  
+
   
     
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+
+  <article class="post white-box reveal comments shadow">
+    <section class="article typo">
+      <p ct><i class='fas fa-comments'></i> 评论</p>
+      
+      <section id="comments">
+        <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+      </section>
+    </section>
+  </article>
+
 
   
 
 
-    
-  
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
 
 </div>
 <aside class='l_side'>
   
   
-    
-    
-
-<section class="widget blogger shadow desktop mobile">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://cdn.jsdelivr.net/gh/Typhoonix/CDN-for-blog@1.11/images/blogger2.jpg'/>
-        </a>
-      
-    
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="https://twitter.com/DevilBakerLlEz"
-              class="social fab fa-twitter flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="/382693873@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://github.com/Typhoonix/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-          
-            <a href="https://music.163.com/#/user/home?id=80855832"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-  
 
   
     
     
   
 
-  <section class="widget category shadow desktop">
+  <section class="widget related_posts shadow desktop mobile">
     
   <header>
     
-      <a href='/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span class='name'>相关文章</span>
     
   </header>
 
 
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Diary/" href="/categories/Diary/"
-            id="categoriesDiary"
-            ><div class='name'>Diary</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%90%8E%E7%AB%AF/" href="/categories/%E5%90%8E%E7%AB%AF/"
-            id="categoriesE5908EE7ABAF"
-            ><div class='name'>后端</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%90%8E%E7%AB%AF/Web-Server/" href="/categories/%E5%90%8E%E7%AB%AF/Web-Server/"
-            id="categoriesE5908EE7ABAFWeb-Server"
-            ><div class='name'>Web Server</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%90%8E%E7%AB%AF/java/" href="/categories/%E5%90%8E%E7%AB%AF/java/"
-            id="categoriesE5908EE7ABAFjava"
-            ><div class='name'>java</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"
-            id="categoriesE695B0E68DAEE7BB93E69E84"
-            ><div class='name'>数据结构</div><div class='badge'>(12)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%AE%97%E6%B3%95/"
-            id="categoriesE695B0E68DAEE7BB93E69E84E7AE97E6B395"
-            ><div class='name'>算法</div><div class='badge'>(8)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%97%A5%E8%AF%AD/" href="/categories/%E6%97%A5%E8%AF%AD/"
-            id="categoriesE697A5E8AFAD"
-            ><div class='name'>日语</div><div class='badge'>(2)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Blog/" style="font-size: 14px; color: #999">Blog</a> <a href="/tags/C%E8%AF%AD%E8%A8%80/" style="font-size: 24px; color: #555">C语言</a> <a href="/tags/Web-Server/" style="font-size: 14px; color: #999">Web Server</a> <a href="/tags/java/" style="font-size: 14px; color: #999">java</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 16.5px; color: #888">后端</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 19px; color: #777">数据结构</a> <a href="/tags/%E6%97%A5%E8%AF%AD/" style="font-size: 16.5px; color: #888">日语</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 21.5px; color: #666">算法</a>
+    <div class="content">
+      <ul class="popular-posts"><li class="popular-posts-item"><div class="popular-posts-title"><h3><a href="\2020\10\13\单例模式\" title="Java单例模式详解" rel="bookmark">Java单例模式详解</a></h3></div></li></ul>
     </div>
   </section>
 
@@ -835,74 +852,8 @@
     
     
 
-<section class="widget shadow desktop">
-  
-  <header>
-    
-      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
 
 
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>17 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2020/08/09'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>14k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div>2020-10-13 日</div>
-          
-        </div>
-        
-      
-    </div>
-  </div>
-</section>
-
-  
 
   
 
