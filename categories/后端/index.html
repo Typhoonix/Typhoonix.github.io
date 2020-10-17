@@ -588,10 +588,10 @@
             
           
             
-              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-13T22:52:06+08:00">
+              <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-17T11:19:34+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Oct 13, 2020</p>
+    <p>更新于：Oct 17, 2020</p>
   </a>
 </div>
 
@@ -602,7 +602,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>279 words</p>
+      <p>291 words</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -663,27 +663,14 @@
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-<p>Tomcat的http请求方式如下</p>
-<p><img src="https://img-blog.csdn.net/20180308173032224?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxNDIzMTY0Ng==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70"></p>
-<ol>
-<li>用户点击网页内容，请求被发送到本机端口8080，被在那里监听的Coyote HTTP/1.1 Connector获得。 </li>
-<li>Connector把该请求交给它所在的Service的Engine来处理，并等待Engine的回应。 </li>
-<li>Engine获得请求localhost/test/index.jsp，匹配所有的虚拟主机Host。 </li>
-<li>Engine匹配到名为localhost的Host（即使匹配不到也把请求交给该Host处理，因为该Host被定义为该Engine的默认主机），名为localhost的Host获得请求/test/index.jsp，匹配它所拥有的所有的Context。Host匹配到路径为/test的Context（如果匹配不到就把该请求交给路径名为“ ”的Context去处理）。 </li>
-<li>path=“/test”的Context获得请求/index.jsp，在它的mapping table中寻找出对应的Servlet。Context匹配到URL PATTERN为*.jsp的Servlet,对应于JspServlet类。 </li>
-<li>构造HttpServletRequest对象和HttpServletResponse对象，作为参数调用JspServlet的doGet（）或doPost（）.执行业务逻辑、数据存储等程序。 </li>
-<li>Context把执行完之后的HttpServletResponse对象返回给Host。 </li>
-<li>Host把HttpServletResponse对象返回给Engine。 </li>
-<li>Engine把HttpServletResponse对象返回Connector。 </li>
-<li>Connector把HttpServletResponse对象返回给客户Browser。</li>
-</ol>
-<p>参考博文：<a target="_blank" rel="noopener" href="https://blog.csdn.net/u014231646/article/details/79482195">Tomcat简介</a></p>
-
+        <p>Tomcat的实际运作原理，特此记录。</p>
       
     </div>
     
+      
+        <a class= "readmore" href="/2020/10/13/Tomcat%E7%9A%84HTTP%E8%AF%B7%E6%B1%82/">
+          阅读全文 <i class="fas fa-chevron-right"></i>
+        </a>
       
     
   </section>
@@ -1038,7 +1025,7 @@
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div>2020-10-13 日</div>
+            <div>2020-10-17 日</div>
           
         </div>
         
